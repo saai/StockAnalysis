@@ -3,4 +3,10 @@ A project for interviewing Data Engineer
 
 submodules:
 ystockquote (which retrive data from yahoo-finance)
-pip install ystockquote
+MySQLdb (connecting mysql)
+flask (providing RESTful APIS)
+
+
+
+
+
