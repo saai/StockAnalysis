@@ -15,7 +15,7 @@ def get_stock_year_price(symbol,year_begin, year_end):
 	'''
 	d = datetime.datetime(year_begin,1,1)
 	end_date = datetime.datetime(year_end,1,1)
-	ret = {"Symbol":{},"Prices":{}}
+	ret = {"Symbol":symbol,"Prices":{}}
 	# iterating over month
 	while  d < end_date:
 		next_mon = d + relativedelta(months=1) 
