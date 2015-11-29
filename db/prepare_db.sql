@@ -12,3 +12,11 @@ CREATE TABLE IF NOT EXISTS tbl_price (
     INDEX day(day),
     INDEX symbol_day(symbol, day)
 );
+CREATE TABLE IF NOT EXISTS tbl_sector_info (
+    symbol VARCHAR(10) NOT NULL,
+    industry VARCHAR(255),
+    sector VARCHAR(255),
+    INDEX symbol(symbol),
+    INDEX industry(industry),
+    INDEX sector(sector)
+);
