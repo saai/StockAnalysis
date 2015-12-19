@@ -5,13 +5,24 @@ MYSQL_USER = "root"
 MYSQL_PASSWORD = ""
 DB_NAME = "stock"
 
-def execute_select_sql_file(path):
+def execute_select_sql_file(path,*args):
 	conn = mysql.connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, DB_NAME)
 	try:
 		sql = []
 		for line in open(path):
 			sql.append(line)
-		str_sql = "".join(sql)
+		str_sql = ("".join(sql))%tuple(args)
+		return execute_select_sql_str(conn, str_sql)
+	except Exception, e:
+		print 'exception',e
+	finally:
+		conn.close()
+
+def execute_select_sql_str(str_sql):
+	
+	conn = mysql.connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, DB_NAME)
+
+	try:
 		return execute_select_sql_str(conn, str_sql)
 	except Exception, e:
 		print 'exception',e
