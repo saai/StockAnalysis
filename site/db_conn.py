@@ -43,7 +43,6 @@ def execute_select_sql_str(db,str_sql):
 		for x in range(0,numrows):
 			row = cursor.fetchone()
 			rows.append(row)
-			print row[0], "-->", row[1]
 		return rows
 	except Exception, e:
 		print 'exception',e
