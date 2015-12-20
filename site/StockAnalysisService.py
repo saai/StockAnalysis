@@ -43,7 +43,7 @@ class StockAnalysisService(object):
 
     def max_profits(self,symbol="AAPL",from_date="2014-01-01", to_date="2015-01-01"):
         """
-        the max profits by unlimited transaction in date range [from_date, to_date)
+        the max profits with unlimited transactions in date range [from_date, to_date)
         only calculate open price for simplification
         """
         rows = db_conn.execute_select_sql_file('./service_sqls/open_prices.sql',symbol,from_date,to_date)

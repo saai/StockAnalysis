@@ -45,7 +45,8 @@ def load_data(stocks_data):
                 high, low = float(val['High']), float(val['Low'])
                 open_price, close_price = float(val['Open']), float(val['Close'])
                 adj_close = float(val['Adj Close'])
-                sql = "INSERT INTO tbl_price VALUES('%s',%f, %f, %f, %f, %f, '%s');" % (sym, high, low, open_price, close_price, adj_close, date)
+                daily_avg = (open_price + close_price + high + low + adj_close)/5.0
+                sql = "INSERT INTO tbl_price VALUES('%s',%f, %f, %f, %f, %f, %f,'%s');" % (sym, high, low, open_price, close_price, adj_close, daily_avg, date)
                 sqls.append(sql)
         print 'begin insert', len(sqls), 'lines'
         if  transaction(conn, sqls) == None:

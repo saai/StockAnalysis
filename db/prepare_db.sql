@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS tbl_price (
     open FLOAT NOT NULL,
     close FLOAT NOT NULL,
     adj_close FLOAT NOT NULL,
+    daily_avg FLOAT NOT NULL,
     day DATETIME NOT NULL,
     INDEX symbol(symbol),
     INDEX day(day),
