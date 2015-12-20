@@ -1,5 +1,5 @@
 # StockAnalysis
-A project for interviewing Data Engineer
+A project for interview
 
 ##Submodules:
 * ystockquote (which retrive data from yahoo-finance)
